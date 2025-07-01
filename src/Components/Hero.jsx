@@ -37,7 +37,7 @@ const Hero = () => {
             theme === "dark" ? "text-yellow-500" : "text-[#d72050]"
           }`}
         >
-          Welcome to the <span className="text-green-500">EchoJournal</span>
+          elcome to the <span className="text-green-500">EchoJournal</span>
         </motion.h1>
         <p
           className={`max-w-2xl text-sm md:text-xl mb-6 ${
