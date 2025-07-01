@@ -1,6 +1,6 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
-import logo from "../assets/navLogo.jpg";
+import logo from "../assets/Logo.png";
 
 import { AuthContext } from "../Context/AuthContext";
 import DarkMode from "./DarkMode";

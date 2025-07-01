@@ -61,113 +61,129 @@ const Login = () => {
       });
   };
   return (
-    <div
-      className={`w-full max-w-5xl mx-auto px-4 py-6 sm:px-6 sm:py-10 shadow-2xl rounded-md my-10 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-500 ${
-        theme === "dark" ? "border-4 border-yellow-500" : ""
-      }`}
-    >
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-          Log In
-        </h1>
-        <p className="text-sm sm:text-base text-[#374151]">
-          Log in to access your account
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Form Section */}
-        <form onSubmit={handleLogin} className="space-y-10">
-          <div className="space-y-4">
-            {/* Email */}
-            <div>
-              <label
-                htmlFor="email"
-                className="block mb-1 text-sm text-[#374151]"
-              >
-                Email address
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email address"
-                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base ${
-                  theme === "dark"
-                    ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                    : "bg-white text-gray-900 border-gray-300 focus:ring-primary"
-                }`}
-              />
-            </div>
-
-            {/* Password */}
-            <div className="relative">
-              <label
-                htmlFor="password"
-                className="block mb-1 text-sm text-[#374151]"
-              >
-                Password
-              </label>
-              <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                id="password"
-                placeholder="*****"
-                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base ${
-                  theme === "dark"
-                    ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                    : "bg-white text-gray-900 border-gray-300 focus:ring-primary"
-                }`}
-              />
-              <span
-                onClick={() => setShowPassword(!showPassword)}
-                className={`absolute right-4 top-9 cursor-pointer  ${
-                  theme === "dark" ? "text-white" : "text-[#374151]"
-                }`}
-              >
-                {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
-              </span>
-            </div>
-          </div>
-
-          {/* Google Login */}
-          <button
-            onClick={handleGoogle}
-            type="button"
-            className="flex items-center justify-center gap-2 btn btn-outline btn-secondary w-full "
+    <div className="py-36">
+      <div
+        className={`w-full max-w-5xl mx-auto px-4 py-6 sm:px-6 sm:py-10 shadow-md rounded-md   ${
+          theme === "dark"
+            ? "bg-gray-900 border border-yellow-500"
+            : "bg-secondary border border-gray-200"
+        }`}
+      >
+        <div className="mb-8 text-center">
+          <h1
+            className={`text-4xl font-extrabold mb-2 ${
+              theme === "dark" ? "text-primary" : "text-yellow-500"
+            }`}
           >
-            <FcGoogle size={20} /> Login with Google
-          </button>
+            Sign In
+          </h1>
+          <p
+            className={`text-lg ${
+              theme === "dark" ? "text-base-200" : "text-gray-600"
+            }`}
+          >
+            Sign in to access your account
+          </p>
+        </div>
 
-          {/* Submit + Redirect */}
-          <div className="space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Form Section */}
+          <form onSubmit={handleLogin} className="space-y-10">
+            <div className="space-y-4">
+              {/* Email */}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block mb-1 text-sm text-[#374151]"
+                >
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email address"
+                  className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base ${
+                    theme === "dark"
+                      ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
+                      : "bg-white text-gray-900 border-gray-300 focus:ring-primary"
+                  }`}
+                />
+              </div>
+
+              {/* Password */}
+              <div className="relative">
+                <label
+                  htmlFor="password"
+                  className="block mb-1 text-sm text-[#374151]"
+                >
+                  Password
+                </label>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  id="password"
+                  placeholder="*****"
+                  className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base ${
+                    theme === "dark"
+                      ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
+                      : "bg-white text-gray-900 border-gray-300 focus:ring-primary"
+                  }`}
+                />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className={`absolute right-4 top-9 cursor-pointer  ${
+                    theme === "dark" ? "text-white" : "text-[#374151]"
+                  }`}
+                >
+                  {showPassword ? (
+                    <FaEyeSlash size={20} />
+                  ) : (
+                    <FaEye size={20} />
+                  )}
+                </span>
+              </div>
+            </div>
+
+            {/* Google Login */}
             <button
-              type="submit"
-              className="btn btn-outline btn-primary w-full"
+              onClick={handleGoogle}
+              type="button"
+              className="flex items-center justify-center gap-2 btn btn-accent text-secondary w-full "
             >
-              Log In
+              <FcGoogle size={20} /> Login with Google
             </button>
-            <p className="px-6 text-sm text-center text-[#374151]">
-              Don't have an account yet?
-              <Link
-                to="/signup"
-                className="hover:underline text-primary font-medium ml-1"
-              >
-                Sign Up
-              </Link>
-            </p>
-          </div>
-        </form>
 
-        {/* Lottie Section */}
-        <div className="flex justify-center md:justify-end">
-          <div className="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px]">
-            <Lottie animationData={myAnimation} loop={true} />
+            {/* Submit + Redirect */}
+            <div className="space-y-5">
+              <button
+                type="submit"
+                className="btn btn-outline btn-primary w-full"
+              >
+                Log In
+              </button>
+              <p className="px-6 text-sm text-center text-[#374151]">
+                Don't have an account yet?
+                <Link
+                  to="/signup"
+                  className="hover:underline text-primary font-medium ml-1"
+                >
+                  Sign Up
+                </Link>
+              </p>
+            </div>
+          </form>
+
+          {/* Lottie Section */}
+          <div className="flex justify-center md:justify-end">
+            <div className="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px]">
+              <Lottie animationData={myAnimation} loop={true} />
+            </div>
           </div>
         </div>
-      </div>
 
-      <ToastContainer />
+        <ToastContainer />
+      </div>
     </div>
   );
 };

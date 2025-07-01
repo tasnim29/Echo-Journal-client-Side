@@ -4,6 +4,7 @@ import AllBlogsCard from "../Components/AllBlogsCard";
 import { FcSearch } from "react-icons/fc";
 import Loader from "../Components/Loader";
 import { AuthContext } from "../Context/AuthContext";
+import AllBlogsTableFormat from "../Components/AllBlogsTableFormat";
 
 const AllBlog = () => {
   const { theme } = use(AuthContext);
@@ -12,6 +13,7 @@ const AllBlog = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [search, setSearch] = useState("");
   const [sortOrder, setSortOrder] = useState("");
+  const [showTable, setShowTable] = useState(false);
 
   // console.log(search);
 
@@ -110,17 +112,33 @@ const AllBlog = () => {
               <option value="asc">Title: A to Z</option>
               <option value="desc">Title: Z to A</option>
             </select>
+
+            {/* View Toggle Switch */}
+            <div className="flex justify-end mb-6">
+              <button
+                onClick={() => setShowTable((prev) => !prev)}
+                className={`btn btn-sm ${
+                  theme === "dark" ? "btn-accent text-secondary" : "btn-primary"
+                }`}
+              >
+                {showTable ? "Switch to Card View" : "Switch to Table View"}
+              </button>
+            </div>
           </div>
 
-          {/* Blog Cards: spans 3 of 4 columns on medium+ screens */}
+          {/* Blog List */}
           <div className="md:col-span-3">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {sortedBlogs.map((blog) => (
-                <div className="w-full flex justify-center">
-                  <AllBlogsCard key={blog._id} blog={blog} />
-                </div>
-              ))}
-            </div>
+            {showTable ? (
+              <AllBlogsTableFormat blogs={sortedBlogs} />
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {sortedBlogs.map((blog) => (
+                  <div key={blog._id} className="w-full flex justify-center">
+                    <AllBlogsCard blog={blog} />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

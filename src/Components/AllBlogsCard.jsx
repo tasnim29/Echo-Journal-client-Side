@@ -61,18 +61,8 @@ const AllBlogsCard = ({ blog }) => {
         >
           {title}
         </h2>
-        <p
-          className={`text-sm font-semibold ${
-            theme === "dark" ? "text-yellow-400" : "text-[#a3163a]"
-          }`}
-        >
-          by {name}
-        </p>
-        <div
-          className={`badge badge-accent w-fit ${
-            theme === "dark" ? "text-yellow-400" : "text-secondary"
-          }`}
-        >
+        <p className="font-semibold text-primary">by {name}</p>
+        <div className="badge badge-accent w-fit text-secondary">
           {category}
         </div>
         <p
@@ -86,21 +76,13 @@ const AllBlogsCard = ({ blog }) => {
         <div className="card-actions justify-end mt-auto gap-2">
           <Link
             to={`/blogDetails/${_id}`}
-            className={`btn btn-sm btn-outline ${
-              theme === "dark"
-                ? "bg-yellow-500 text-white border-yellow-500 hover:bg-yellow-600"
-                : "bg-accent text-white"
-            }`}
+            className="btn btn-sm btn-accent text-secondary"
           >
             Details
           </Link>
           <button
             onClick={handleWishlist}
-            className={`btn btn-sm btn-outline ${
-              theme === "dark"
-                ? "bg-yellow-500 text-white border-yellow-500 hover:bg-yellow-600"
-                : "bg-primary text-white"
-            }`}
+            className="btn btn-sm btn-primary text-secondary"
           >
             Wishlist
           </button>

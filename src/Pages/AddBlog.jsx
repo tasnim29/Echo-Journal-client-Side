@@ -42,7 +42,7 @@ const AddBlog = () => {
         <header className="mb-12 text-center">
           <h1
             className={`text-4xl font-extrabold mb-2 ${
-              theme === "dark" ? "text-primary" : "text-primary"
+              theme === "dark" ? "text-primary" : "text-yellow-500"
             }`}
           >
             Your Blog
