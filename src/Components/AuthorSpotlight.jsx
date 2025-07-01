@@ -1,5 +1,6 @@
 import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
+import { Link } from "react-router";
 
 const AuthorSpotlight = () => {
   const [authors, setAuthors] = useState([]);
@@ -32,12 +33,12 @@ const AuthorSpotlight = () => {
   return (
     <div className="max-w-7xl mx-auto my-20">
       <div className="mb-8 w-8/12 mx-auto">
-        <h2 className="text-2xl font-bold text-[#d72050] sm:text-6xl text-center ">
+        <h2 className="text-2xl font-bold text-primary md:text-4xl text-center">
           Author Spotlight
         </h2>
         <p
-          className={`text-base  md:text-lg text-center ${
-            theme === "dark" ? "text-base-200" : "text-gray-500"
+          className={`text-base md:text-lg text-center ${
+            theme === "dark" ? "text-secondary" : "text-gray-500"
           }`}
         >
           Get to know the minds behind the blogs! Meet our featured authors,
@@ -49,15 +50,17 @@ const AuthorSpotlight = () => {
         {authors?.map((author, index) => (
           <div
             key={index}
-            className={`text-center rounded-xl shadow-lg p-6 lg:transition lg:duration-300 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-500 hover:scale-105 cursor-pointer ${
-              theme === "dark" ? "border-4 border-yellow-500" : ""
+            className={`text-center rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 cursor-pointer ${
+              theme === "dark"
+                ? "bg-[#1e293b] text-secondary border-2 border-yellow-500"
+                : "bg-secondary text-gray-800"
             }`}
             data-aos="fade-up"
             data-aos-delay={index * 100}
             data-aos-duration="800"
             data-aos-easing="ease-out-cubic"
           >
-            <div className="w-28 h-28 rounded-full ring-4 ring-[#d72050] ring-offset-2 ring-offset-white mx-auto mb-4 flex items-center justify-center">
+            <div className="w-28 h-28 rounded-full ring-4 ring-accent ring-offset-2 ring-offset-white mx-auto mb-4 flex items-center justify-center">
               <img
                 className="w-24 h-24 rounded-full object-cover"
                 src={author.photoURL}
@@ -65,17 +68,16 @@ const AuthorSpotlight = () => {
               />
             </div>
 
-            <h6 className="mb-2 text-xl font-semibold text-[#d72050]">
+            <h6 className="mb-2 text-xl font-semibold text-primary">
               {author.name}
             </h6>
-            <p className="text-sm text-gray-600">{author.email}</p>
-            <a
-              href="#"
-              className="mt-2 inline-block text-[#d72050] hover:underline font-medium"
-              aria-label={`View blogs by ${author.name}`}
+            <p className="text-sm">{author.email}</p>
+            <Link
+              to="/featuredBlog"
+              className="btn btn-sm btn-accent mt-5 text-secondary"
             >
-              View Blogs
-            </a>
+              Find Them
+            </Link>
           </div>
         ))}
       </div>

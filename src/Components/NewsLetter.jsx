@@ -14,7 +14,7 @@ const NewsLetter = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <h1 className="text-center text-[#d72050] text-2xl md:text-6xl font-bold mb-6">
+      <h1 className="text-center text-primary text-2xl md:text-4xl font-bold mb-6">
         Newsletter
       </h1>
       <div className="flex flex-col md:flex-row items-center gap-6 justify-center">
@@ -25,7 +25,7 @@ const NewsLetter = () => {
         <div className="md:max-w-md lg:col-span-2">
           <p
             className={`text-center md:text-left font-medium ${
-              theme === "dark" ? "text-yellow-500" : "text-primary"
+              theme === "dark" ? "text-secondary" : "text-primary"
             }`}
           >
             Subscribe for updates
@@ -39,12 +39,12 @@ const NewsLetter = () => {
               required
               type="email"
               className={`flex-grow w-full h-12 px-4 transition duration-200 bg-white border border-gray-300 text-gray-900 rounded shadow-sm appearance-none focus:border-primary focus:outline-none focus:shadow-outline ${
-                theme === "dark" ? "border-3 border-orange-500 " : ""
+                theme === "dark" ? "border-2 border-yellow-500 " : ""
               }`}
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center h-12 px-6 btn bg-primary text-white"
+              className="inline-flex items-center justify-center h-12 px-6 btn bg-accent text-secondary"
             >
               Subscribe
             </button>

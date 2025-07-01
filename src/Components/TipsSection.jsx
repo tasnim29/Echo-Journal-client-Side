@@ -11,7 +11,7 @@ const TipsSection = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <div className="mb-8 w-8/12 mx-auto">
-        <h2 className="text-2xl font-bold text-[#d72050] sm:text-4xl text-center ">
+        <h2 className="text-2xl font-bold text-primary md:text-4xl text-center ">
           Tips for writing engaging blogs
         </h2>
         <p
@@ -38,7 +38,7 @@ const TipsSection = () => {
         >
           {/* Card 1 */}
           <div
-            className={`rounded lg:p-5 lg:transition lg:duration-300 hover:scale-105 cursor-pointer shadow-2xl transition-colors duration-500 ${
+            className={`rounded lg:p-5 lg:transition lg:duration-300 hover:scale-105 cursor-pointer shadow-lg transition-colors duration-500 ${
               theme === "dark"
                 ? "bg-gray-800 border-2 border-white hover:border-4 hover:border-yellow-500 text-gray-100 hover:bg-gray-700"
                 : "bg-white hover:bg-indigo-100 text-gray-700"

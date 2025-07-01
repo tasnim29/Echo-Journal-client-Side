@@ -31,80 +31,80 @@ const AddBlog = () => {
       });
   };
   return (
-    <div
-      className={`w-full transition-colors duration-1000 ease-in-out max-w-5xl mx-auto px-6 py-8 sm:px-10 sm:py-12 shadow-2xl rounded-lg my-12   ${
-        theme === "dark"
-          ? "bg-gray-900 border border-yellow-500"
-          : "bg-white border border-[#f3f4f6]"
-      }`}
-    >
-      <div className="mb-10 text-center">
-        <h1
-          className={`text-2xl md:text-5xl font-bold  mb-3 ${
-            theme === "dark" ? "text-yellow-500" : "text-[#d72050]"
-          }`}
-        >
-          Add Your Blog
-        </h1>
-        <p
-          className={`text-base  md:text-lg text-center ${
-            theme === "dark" ? "text-base-200" : "text-gray-500"
-          }`}
-        >
-          Fill in the form below to publish your blog!
-        </p>
-      </div>
-
-      <form
-        onSubmit={handleSubmit}
-        className="container flex flex-col mx-auto space-y-14"
+    <div className="py-36">
+      <div
+        className={`max-w-4xl mx-auto p-10 rounded-xl shadow-lg transition-colors duration-700 ${
+          theme === "dark"
+            ? "bg-gray-900 border border-yellow-500"
+            : "bg-secondary border border-gray-200"
+        }`}
       >
-        <fieldset className="grid grid-cols-6 gap-7 p-8 rounded-xl  shadow-lg bg-gradient-to-br from-gray-100 via-gray-200 to-gray-500">
-          <div className="col-span-6 sm:col-span-3">
+        <header className="mb-12 text-center">
+          <h1
+            className={`text-4xl font-extrabold mb-2 ${
+              theme === "dark" ? "text-primary" : "text-primary"
+            }`}
+          >
+            Your Blog
+          </h1>
+          <p
+            className={`text-lg ${
+              theme === "dark" ? "text-base-200" : "text-gray-600"
+            }`}
+          >
+            Fill in the form below to publish your blog!
+          </p>
+        </header>
+
+        <form onSubmit={handleSubmit} className="space-y-10">
+          {/* Title */}
+          <div>
             <label
               htmlFor="title"
-              className="text-base font-semibold text-[#d72050]"
+              className="block mb-3 text-lg font-semibold text-primary"
             >
-              Title
+              Blog Title
             </label>
             <input
               id="title"
               name="title"
               type="text"
-              placeholder="Please enter your blog title"
-              className={`w-full mt-2 px-4 py-3 border rounded-lg placeholder-[#9ca3af] text-base sm:text-lg transition ${
+              placeholder="Enter your blog title"
+              className={`w-full rounded-lg px-5 py-3 border transition focus:outline-none focus:ring-3 focus:ring-primary placeholder-gray-400 text-base sm:text-lg ${
                 theme === "dark"
-                  ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                  : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
+                  ? "bg-gray-800 border-gray-600 text-white focus:ring-yellow-500"
+                  : "bg-white border-gray-300 text-gray-900"
               }`}
             />
           </div>
 
-          <div className="col-span-6 sm:col-span-3">
+          {/* Image URL */}
+          <div>
             <label
               htmlFor="imageURL"
-              className="text-base font-semibold text-[#d72050]"
+              className="block mb-3 text-lg font-semibold text-primary"
             >
-              Image of your blog
+              Blog Image URL
             </label>
             <input
               id="imageURL"
               name="imageURL"
               type="text"
-              placeholder="Enter image URL"
-              className={`w-full mt-2 px-4 py-3 border rounded-lg placeholder-[#9ca3af] text-base sm:text-lg transition ${
+              placeholder="Paste image URL here"
+              className={`w-full rounded-lg px-5 py-3 border transition focus:outline-none focus:ring-3 focus:ring-primary placeholder-gray-400 text-base sm:text-lg ${
                 theme === "dark"
-                  ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                  : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
+                  ? "bg-gray-800 border-gray-600 text-white focus:ring-yellow-500"
+                  : "bg-white border-gray-300 text-gray-900"
               }`}
             />
           </div>
 
-          <div className="col-span-6 flex flex-col sm:flex-row gap-8">
-            <div className="w-full sm:w-1/2">
+          {/* Author Address and Photo side by side */}
+          <div className="flex flex-col sm:flex-row gap-8">
+            <div className="flex-1">
               <label
                 htmlFor="address"
-                className="text-base font-semibold text-[#d72050]"
+                className="block mb-3 text-lg font-semibold text-primary"
               >
                 Author's Address
               </label>
@@ -113,128 +113,132 @@ const AddBlog = () => {
                 name="address"
                 type="text"
                 placeholder="Enter address"
-                className={`w-full mt-2 px-4 py-3 border rounded-lg placeholder-[#9ca3af] text-base sm:text-lg transition ${
+                className={`w-full rounded-lg px-5 py-3 border transition focus:outline-none focus:ring-3 focus:ring-primary placeholder-gray-400 text-base sm:text-lg ${
                   theme === "dark"
-                    ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                    : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
+                    ? "bg-gray-800 border-gray-600 text-white focus:ring-yellow-500"
+                    : "bg-white border-gray-300 text-gray-900"
                 }`}
               />
             </div>
-            <div className="w-full sm:w-1/2">
+            <div className="flex-1">
               <label
                 htmlFor="photoURL"
-                className="text-base font-semibold text-[#d72050]"
+                className="block mb-3 text-lg font-semibold text-primary"
               >
-                Photo of user
+                User Photo URL
               </label>
               <input
                 id="photoURL"
                 name="photoURL"
                 type="text"
                 defaultValue={user.photoURL}
-                className={`w-full mt-2 px-4 py-3 border rounded-lg placeholder-[#9ca3af] text-base sm:text-lg transition ${
+                className={`w-full rounded-lg px-5 py-3 border transition focus:outline-none focus:ring-3 focus:ring-primary placeholder-gray-400 text-base sm:text-lg ${
                   theme === "dark"
-                    ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                    : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
+                    ? "bg-gray-800 border-gray-600 text-white focus:ring-yellow-500"
+                    : "bg-white border-gray-300 text-gray-900"
                 }`}
               />
             </div>
           </div>
 
-          <div className="col-span-6 sm:col-span-2">
-            <label
-              htmlFor="category"
-              className="text-base font-semibold text-[#d72050]"
-            >
-              Category
-            </label>
-            <select
-              id="category"
-              name="category"
-              defaultValue="Pick a category"
-              className={`w-full mt-2 px-4 py-3 border rounded-lg text-base sm:text-lg transition ${
-                theme === "dark"
-                  ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                  : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
-              }`}
-            >
-              <option disabled>Pick a category</option>
-              <option>Technology</option>
-              <option>Health & Fitness</option>
-              <option>Sports</option>
-              <option>Education</option>
-            </select>
+          {/* Category & Author Name side by side */}
+          <div className="flex flex-col sm:flex-row gap-8">
+            <div className="flex-1">
+              <label
+                htmlFor="category"
+                className="block mb-3 text-lg font-semibold text-primary"
+              >
+                Category
+              </label>
+              <select
+                id="category"
+                name="category"
+                defaultValue="Pick a category"
+                className={`w-full rounded-lg px-5 py-3 border transition focus:outline-none focus:ring-3 focus:ring-primary text-base sm:text-lg ${
+                  theme === "dark"
+                    ? "bg-gray-800 border-gray-600 text-white focus:ring-yellow-500"
+                    : "bg-white border-gray-300 text-gray-900"
+                }`}
+              >
+                <option disabled>Pick a category</option>
+                <option>Technology</option>
+                <option>Health & Fitness</option>
+                <option>Sports</option>
+                <option>Education</option>
+              </select>
+            </div>
+            <div className="flex-1">
+              <label
+                htmlFor="name"
+                className="block mb-3 text-lg font-semibold text-primary"
+              >
+                Author Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                className={`w-full rounded-lg px-5 py-3 border transition focus:outline-none focus:ring-3 focus:ring-primary placeholder-gray-400 text-base sm:text-lg ${
+                  theme === "dark"
+                    ? "bg-gray-800 border-gray-600 text-white focus:ring-yellow-500"
+                    : "bg-white border-gray-300 text-gray-900"
+                }`}
+              />
+            </div>
           </div>
 
-          <div className="col-span-6 sm:col-span-2">
-            <label
-              htmlFor="name"
-              className="text-base font-semibold text-[#d72050]"
-            >
-              Author Name
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Your name"
-              className={`w-full mt-2 px-4 py-3 border rounded-lg placeholder-[#9ca3af] text-base sm:text-lg transition ${
-                theme === "dark"
-                  ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                  : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
-              }`}
-            />
-          </div>
-
-          <div className="col-span-6">
+          {/* Short Description */}
+          <div>
             <label
               htmlFor="short"
-              className="text-base font-semibold text-[#d72050]"
+              className="block mb-3 text-lg font-semibold text-primary"
             >
               Short Description
             </label>
             <textarea
               id="short"
               name="short"
-              placeholder="Shortly write about your blog"
-              className={`w-full mt-2 px-4 py-3 border rounded-lg text-base sm:text-lg transition ${
+              placeholder="Briefly write about your blog"
+              rows={3}
+              className={`w-full rounded-lg px-5 py-3 border resize-none transition focus:outline-none focus:ring-3 focus:ring-primary placeholder-gray-400 text-base sm:text-lg ${
                 theme === "dark"
-                  ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                  : "bg-white text-[#374151] border-gray-300 focus:ring-[#d72050]"
+                  ? "bg-gray-800 border-gray-600 text-white focus:ring-yellow-500"
+                  : "bg-white border-gray-300 text-gray-900"
               }`}
             ></textarea>
           </div>
 
-          <div className="col-span-6">
+          {/* Long Description */}
+          <div>
             <label
               htmlFor="long"
-              className="text-base font-semibold text-[#d72050]"
+              className="block mb-3 text-lg font-semibold text-primary"
             >
               Long Description
             </label>
             <textarea
               id="long"
               name="long"
-              rows="6"
               placeholder="Write your blog briefly"
-              className={`w-full mt-2 px-4 py-3 border rounded-lg text-base sm:text-lg transition ${
+              rows={6}
+              className={`w-full rounded-lg px-5 py-3 border resize-y transition focus:outline-none focus:ring-3 focus:ring-primary placeholder-gray-400 text-base sm:text-lg ${
                 theme === "dark"
-                  ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                  : "bg-white text-[#374151] border-gray-300 focus:ring-[#d72050]"
+                  ? "bg-gray-800 border-gray-600 text-white focus:ring-yellow-500"
+                  : "bg-white border-gray-300 text-gray-900"
               }`}
             ></textarea>
           </div>
 
-          <div className="col-span-6">
-            <button
-              className="bg-gradient-to-r from-[#d72050] via-[#a3163a] to-[#f03c6b] btn w-full text-white font-extrabold py-3 rounded-lg hover:from-[#bb1c45] hover:via-[#911731] hover:to-[#d9335d] transition duration-300 shadow-lg"
-              type="submit"
-            >
-              Submit
-            </button>
-          </div>
-        </fieldset>
-      </form>
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full py-4 rounded-lg font-extrabold btn btn-accent text-white"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

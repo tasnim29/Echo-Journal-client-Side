@@ -83,7 +83,7 @@ const SignUp = () => {
       }`}
     >
       <div className="mb-8 text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#d72050] mb-2">
+        <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-2">
           Register
         </h1>
         <p className="text-sm sm:text-base text-[#374151]">
@@ -108,10 +108,10 @@ const SignUp = () => {
                 name="name"
                 id="name"
                 placeholder="Enter your full name"
-                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#d72050] text-sm sm:text-base ${
+                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base ${
                   theme === "dark"
                     ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                    : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
+                    : "bg-white text-gray-900 border-gray-300 focus:ring-primary"
                 }`}
               />
             </div>
@@ -129,10 +129,10 @@ const SignUp = () => {
                 name="email"
                 id="email"
                 placeholder="leroy@jenkins.com"
-                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#d72050] text-sm sm:text-base ${
+                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base ${
                   theme === "dark"
                     ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                    : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
+                    : "bg-white text-gray-900 border-gray-300 focus:ring-primary"
                 }`}
               />
             </div>
@@ -150,10 +150,10 @@ const SignUp = () => {
                 name="photo"
                 id="photo"
                 placeholder="Enter the URL of your image"
-                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#d72050] text-sm sm:text-base ${
+                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base ${
                   theme === "dark"
                     ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                    : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
+                    : "bg-white text-gray-900 border-gray-300 focus:ring-primary"
                 }`}
               />
             </div>
@@ -171,10 +171,10 @@ const SignUp = () => {
                 name="password"
                 id="password"
                 placeholder="*****"
-                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#d72050] text-sm sm:text-base ${
+                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base ${
                   theme === "dark"
                     ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                    : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
+                    : "bg-white text-gray-900 border-gray-300 focus:ring-primary"
                 }`}
               />
               <span
@@ -207,7 +207,7 @@ const SignUp = () => {
               Already have an account?
               <Link
                 to="/signin"
-                className="hover:underline text-[#d72050] font-medium ml-1"
+                className="hover:underline text-primary font-medium ml-1"
               >
                 Log In
               </Link>

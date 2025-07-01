@@ -65,74 +65,76 @@ const Wishlist = () => {
   }
 
   return (
-    <div className="overflow-x-auto max-w-7xl mx-auto mt-20">
-      <h1
-        className={`text-2xl md:text-5xl font-bold text-center mb-3 ${
-          theme === "dark" ? "text-yellow-500" : "text-[#d72050]"
-        }`}
-      >
-        WishListed Blogs
-      </h1>
-      <p className="text-center text-gray-400 font-semibold mb-8">
-        These are the blogs that you wanted to read for later!!
-      </p>
-      <table className="table mb-20">
-        {/* head */}
-        <thead>
-          <tr
-            className={`  transition duration-1000 ${
-              theme === "dark" ? "text-white " : "text-black"
-            }`}
-          >
-            <th>No</th>
-            <th>title</th>
-            <th>Category</th>
-            <th>Author</th>
-            <th>Address</th>
+    <div className="py-36">
+      <div className="overflow-x-auto max-w-7xl mx-auto ">
+        <h1
+          className={`text-2xl md:text-5xl font-bold text-center mb-3 ${
+            theme === "dark" ? "text-yellow-500" : "text-primary"
+          }`}
+        >
+          WishListed Blogs
+        </h1>
+        <p className="text-center text-gray-400 font-semibold mb-8">
+          These are the blogs that you wanted to read for later!!
+        </p>
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr
+              className={`  transition duration-1000 ${
+                theme === "dark" ? "text-white " : "text-black"
+              }`}
+            >
+              <th>No</th>
+              <th>title</th>
+              <th>Category</th>
+              <th>Author</th>
+              <th>Address</th>
 
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {wishlist.map((blog, index) => (
-            <tr key={blog._id}>
-              <td className="px-4 py-2">{index + 1}</td>
-
-              {/* Title */}
-              <td className="px-4 py-2 font-bold">{blog.title}</td>
-
-              {/* Category */}
-              <td className="px-4 py-2">{blog.category}</td>
-
-              {/* Author */}
-              <td className="px-4 py-2">{blog.name}</td>
-
-              {/* Address */}
-              <td className="px-4 py-2">{blog.address}</td>
-
-              {/* Actions */}
-              <td className="px-4 py-2 flex items-center gap-4">
-                {/* see details */}
-                <Link
-                  className={`${theme === "dark" ? "text-white" : ""}`}
-                  to={`/blogDetails/${blog.blogId}`}
-                >
-                  <TbListDetails size={24} />
-                </Link>
-                {/* remove from wishlist */}
-                <button
-                  onClick={() => handleRemove(blog._id)}
-                  className={`cursor-pointer ${
-                    theme === "dark" ? "text-white" : ""
-                  }`}
-                >
-                  <MdAutoDelete size={24} />
-                </button>
-              </td>
+              <th></th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {wishlist.map((blog, index) => (
+              <tr key={blog._id}>
+                <td className="px-4 py-2">{index + 1}</td>
+
+                {/* Title */}
+                <td className="px-4 py-2 font-bold">{blog.title}</td>
+
+                {/* Category */}
+                <td className="px-4 py-2">{blog.category}</td>
+
+                {/* Author */}
+                <td className="px-4 py-2">{blog.name}</td>
+
+                {/* Address */}
+                <td className="px-4 py-2">{blog.address}</td>
+
+                {/* Actions */}
+                <td className="px-4 py-2 flex items-center gap-4">
+                  {/* see details */}
+                  <Link
+                    className={`${theme === "dark" ? "text-white" : ""}`}
+                    to={`/blogDetails/${blog.blogId}`}
+                  >
+                    <TbListDetails size={24} />
+                  </Link>
+                  {/* remove from wishlist */}
+                  <button
+                    onClick={() => handleRemove(blog._id)}
+                    className={`cursor-pointer ${
+                      theme === "dark" ? "text-white" : ""
+                    }`}
+                  >
+                    <MdAutoDelete size={24} />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

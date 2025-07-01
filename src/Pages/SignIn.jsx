@@ -67,7 +67,7 @@ const Login = () => {
       }`}
     >
       <div className="mb-8 text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#d72050] mb-2">
+        <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-2">
           Log In
         </h1>
         <p className="text-sm sm:text-base text-[#374151]">
@@ -92,10 +92,10 @@ const Login = () => {
                 name="email"
                 id="email"
                 placeholder="Enter your email address"
-                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#d72050] text-sm sm:text-base ${
+                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base ${
                   theme === "dark"
                     ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                    : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
+                    : "bg-white text-gray-900 border-gray-300 focus:ring-primary"
                 }`}
               />
             </div>
@@ -113,10 +113,10 @@ const Login = () => {
                 name="password"
                 id="password"
                 placeholder="*****"
-                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#d72050] text-sm sm:text-base ${
+                className={`w-full px-3 py-2 border border-[#f3f4f6] rounded-md bg-[#f9fafb] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base ${
                   theme === "dark"
                     ? "bg-gray-800 text-gray-100 border-gray-600 focus:ring-yellow-500"
-                    : "bg-white text-gray-900 border-gray-300 focus:ring-[#d72050]"
+                    : "bg-white text-gray-900 border-gray-300 focus:ring-primary"
                 }`}
               />
               <span
@@ -151,7 +151,7 @@ const Login = () => {
               Don't have an account yet?
               <Link
                 to="/signup"
-                className="hover:underline text-[#d72050] font-medium ml-1"
+                className="hover:underline text-primary font-medium ml-1"
               >
                 Sign Up
               </Link>

@@ -70,12 +70,12 @@ const FeaturedBlog = () => {
     return <Loader></Loader>;
   }
   return (
-    <div>
-      <div className="max-w-7xl mx-auto my-20 px-4">
+    <div className="py-36">
+      <div className="max-w-7xl mx-auto  px-4">
         <div className="mb-6">
           <h1
             className={`text-2xl md:text-5xl font-bold text-center mb-3 ${
-              theme === "dark" ? "text-yellow-500" : "text-[#d72050]"
+              theme === "dark" ? "text-yellow-500" : "text-primary"
             }`}
           >
             Featured Blogs

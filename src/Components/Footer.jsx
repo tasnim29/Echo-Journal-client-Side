@@ -30,7 +30,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/"
-                    className="hover:text-[#d72050] transition-colors duration-300"
+                    className="hover:text-primary transition-colors duration-300"
                   >
                     Tech
                   </a>
@@ -38,7 +38,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/"
-                    className="hover:text-[#d72050] transition-colors duration-300"
+                    className="hover:text-primary transition-colors duration-300"
                   >
                     Travel
                   </a>
@@ -46,7 +46,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/"
-                    className="hover:text-[#d72050] transition-colors duration-300"
+                    className="hover:text-primary transition-colors duration-300"
                   >
                     Lifestyle
                   </a>
@@ -54,7 +54,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/"
-                    className="hover:text-[#d72050] transition-colors duration-300"
+                    className="hover:text-primary transition-colors duration-300"
                   >
                     Food
                   </a>
@@ -62,7 +62,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/"
-                    className="hover:text-[#d72050] transition-colors duration-300"
+                    className="hover:text-primary transition-colors duration-300"
                   >
                     Sports
                   </a>
@@ -75,7 +75,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/"
-                    className="hover:text-[#d72050] transition-colors duration-300"
+                    className="hover:text-primary transition-colors duration-300"
                   >
                     Terms of Use
                   </a>
@@ -83,7 +83,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/"
-                    className="hover:text-[#d72050] transition-colors duration-300"
+                    className="hover:text-primary transition-colors duration-300"
                   >
                     Privacy Policy
                   </a>
@@ -91,7 +91,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/"
-                    className="hover:text-[#d72050] transition-colors duration-300"
+                    className="hover:text-primary transition-colors duration-300"
                   >
                     Disclaimer
                   </a>
@@ -108,21 +108,21 @@ const Footer = () => {
             {/* Twitter */}
             <a
               href="https://www.x.com/"
-              className="hover:text-[#d72050] text-gray-700 transition-colors duration-300"
+              className="hover:text-primary text-gray-700 transition-colors duration-300"
             >
               <FaSquareXTwitter size={24} />
             </a>
             {/* Instagram */}
             <a
               href="https://www.instagram.com/"
-              className="hover:text-[#d72050] text-gray-700 transition-colors duration-300"
+              className="hover:text-primary text-gray-700 transition-colors duration-300"
             >
               <FaSquareInstagram size={24} />
             </a>
             {/* Facebook */}
             <a
               href="https://www.facebook.com/"
-              className="hover:text-[#d72050] text-gray-700 transition-colors duration-300"
+              className="hover:text-primary text-gray-700 transition-colors duration-300"
             >
               <FaFacebookSquare size={24} />
             </a>

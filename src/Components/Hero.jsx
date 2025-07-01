@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "motion/react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import { AuthContext } from "../Context/AuthContext";
+import { Link } from "react-router";
 
 const Hero = () => {
   const { theme } = React.useContext(AuthContext);
@@ -22,8 +23,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-[600px] overflow-hidden">
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4">
+    <div className="relative h-[700px] overflow-hidden">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4 pt-36">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,10 +35,10 @@ const Hero = () => {
             repeatType: "loop",
           }}
           className={`text-2xl md:text-6xl font-bold mb-4 ${
-            theme === "dark" ? "text-yellow-500" : "text-[#d72050]"
+            theme === "dark" ? "text-yellow-500" : "text-primary"
           }`}
         >
-          elcome to the <span className="text-green-500">EchoJournal</span>
+          Welcome to the <span className="text-accent">EchoJournal</span>
         </motion.h1>
         <p
           className={`max-w-2xl text-sm md:text-xl mb-6 ${
@@ -56,6 +57,10 @@ const Hero = () => {
             centeredSlides={true}
             slidesPerView="auto"
             loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             coverflowEffect={{
               rotate: 50,
               stretch: 0,
@@ -64,7 +69,7 @@ const Hero = () => {
               slideShadows: true,
             }}
             pagination={{ clickable: true }}
-            modules={[EffectCoverflow, Pagination]}
+            modules={[EffectCoverflow, Pagination, Autoplay]} // include Autoplay
             className="mySwiper"
           >
             {blogs.map((blog) => (
@@ -88,7 +93,12 @@ const Hero = () => {
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
                   >
                     <h3 className="font-semibold">{blog.title}</h3>
-                    <button className="btn btn-secondary">View More</button>
+                    <Link
+                      to="/allBlog"
+                      className="btn btn-accent text-secondary"
+                    >
+                      See More Blogs
+                    </Link>
                   </div>
                 </div>
               </SwiperSlide>

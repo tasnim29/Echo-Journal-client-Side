@@ -47,40 +47,42 @@ const RecentBlogsCard = ({ blog, index }) => {
 
   return (
     <div
-      className={`card lg:transition lg:duration-300 hover:scale-105 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-500 shadow-lg  rounded-lg ${
-        theme === "dark" ? "border-4 border-yellow-500" : ""
+      className={`card flex flex-col justify-between w-full max-w-sm mx-auto transform transition duration-300 hover:scale-105 shadow-lg rounded-lg ${
+        theme === "dark"
+          ? "bg-[#1e293b] text-white border-2 border-yellow-500"
+          : "bg-secondary text-gray-800"
       }`}
       data-aos="fade-up"
       data-aos-delay={index * 100}
       data-aos-duration="800"
-      data-aos-easing="ease-out-cubic"
     >
       <PhotoProvider>
-        <figure className="px-10 pt-10">
+        <figure className="px-6 pt-6 h-48 overflow-hidden">
           <PhotoView src={imageURL}>
             <img
               src={imageURL}
               alt={title}
-              className="rounded-xl w-full h-48 object-cover cursor-zoom-in"
+              className="rounded-xl w-full h-full object-cover cursor-zoom-in"
             />
           </PhotoView>
         </figure>
       </PhotoProvider>
 
-      <div className="card-body items-center text-center">
-        <h2 className="card-title text-gray-700 text-xl font-bold">{title}</h2>
-        <h3 className="font-semibold text-[#a3163a]">Author Name : {name}</h3>
-        <p className="text-gray-700">{short}</p>
-        <div className="card-actions space-x-3">
+      <div className="card-body flex flex-col items-center text-center gap-2 px-4 pb-4">
+        <h2 className="card-title text-xl font-bold">{title}</h2>
+        <h3 className="font-semibold text-primary">Author Name: {name}</h3>
+        <p className="line-clamp-3">{short}</p>
+
+        <div className="card-actions mt-auto space-x-3">
           <Link
             to={`/blogDetails/${_id}`}
-            className="btn btn-sm bg-[#d72050] hover:bg-[#a3163a] text-white"
+            className="btn btn-sm btn-accent text-secondary"
           >
             Details
           </Link>
           <button
             onClick={handleWishlist}
-            className="btn btn-sm bg-[#d72050] hover:bg-[#a3163a] text-white"
+            className="btn btn-sm btn-primary text-secondary"
           >
             Wishlist
           </button>
