@@ -9,11 +9,11 @@ const ContactUs = () => {
   const isDark = theme === "dark";
   return (
     <div
-      className={`py-36 ${
+      className={`py-36  ${
         isDark ? "bg-gray-900 text-white" : "bg-white text-gray-800"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 xl:px-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-6  grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left Content */}
         <div className="space-y-8">
           <h2
@@ -110,13 +110,13 @@ const ContactUs = () => {
 
           <button
             type="submit"
-            className={`w-full py-3 px-4 font-semibold rounded-lg transition ${
+            className={`w-full py-3 px-4 font-semibold rounded-lg transition cursor-pointer ${
               isDark
                 ? "bg-yellow-500 text-gray-900 hover:bg-yellow-400"
                 : "bg-accent text-white hover:bg-opacity-90"
             }`}
           >
-            Send Messag
+            Send Message
           </button>
         </form>
       </div>
