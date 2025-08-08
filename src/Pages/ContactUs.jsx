@@ -116,7 +116,7 @@ const ContactUs = () => {
                 : "bg-accent text-white hover:bg-opacity-90"
             }`}
           >
-            Send Message
+            Send Messag
           </button>
         </form>
       </div>
