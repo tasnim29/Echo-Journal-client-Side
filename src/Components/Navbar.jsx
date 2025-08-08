@@ -79,6 +79,34 @@ const Navbar = () => {
           Featured Blogs
         </NavLink>
       </li>
+      <li className="font-semibold text-sm">
+        <NavLink
+          to="/aboutUs"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary"
+              : `${
+                  theme === "dark" ? "text-gray-300" : "text-[#374151]"
+                } hover:text-primary`
+          }
+        >
+          About Us
+        </NavLink>
+      </li>
+      <li className="font-semibold text-sm">
+        <NavLink
+          to="/contactUs"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary"
+              : `${
+                  theme === "dark" ? "text-gray-300" : "text-[#374151]"
+                } hover:text-primary`
+          }
+        >
+          Contact Us
+        </NavLink>
+      </li>
       {user && (
         <li className="font-semibold text-sm">
           <NavLink

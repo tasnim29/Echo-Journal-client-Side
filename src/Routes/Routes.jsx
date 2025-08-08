@@ -13,6 +13,8 @@ import BlogDetails from "../Pages/BlogDetails";
 import UpdateBlog from "../Pages/UpdateBlog";
 import Loader from "../Components/Loader";
 import ErrorPage from "../Pages/ErrorPage";
+import AboutUs from "../Pages/AboutUs";
+import ContactUs from "../Pages/ContactUs";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +53,16 @@ export const router = createBrowserRouter([
         path: "/allBlog",
 
         Component: AllBlog,
+      },
+      {
+        path: "/aboutUs",
+
+        Component: AboutUs,
+      },
+      {
+        path: "/contactUs",
+
+        Component: ContactUs,
       },
       {
         path: "/blogDetails/:id",
