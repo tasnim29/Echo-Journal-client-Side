@@ -35,7 +35,7 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      {user && (
+      {/* {user && (
         <li className="font-semibold text-sm">
           <NavLink
             to="/addBlog"
@@ -48,6 +48,22 @@ const Navbar = () => {
             }
           >
             Add Blog
+          </NavLink>
+        </li>
+      )} */}
+      {user && (
+        <li className="font-semibold text-sm">
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              isActive
+                ? "text-primary"
+                : `${
+                    theme === "dark" ? "text-gray-300" : "text-[#374151]"
+                  } hover:text-primary`
+            }
+          >
+            DashBoard
           </NavLink>
         </li>
       )}
@@ -107,7 +123,7 @@ const Navbar = () => {
           Contact Us
         </NavLink>
       </li>
-      {user && (
+      {/* {user && (
         <li className="font-semibold text-sm">
           <NavLink
             to="/wishlist"
@@ -122,7 +138,7 @@ const Navbar = () => {
             Wishlist
           </NavLink>
         </li>
-      )}
+      )} */}
     </>
   );
 

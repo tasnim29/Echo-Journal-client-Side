@@ -15,6 +15,8 @@ import Loader from "../Components/Loader";
 import ErrorPage from "../Pages/ErrorPage";
 import AboutUs from "../Pages/AboutUs";
 import ContactUs from "../Pages/ContactUs";
+import DashBoardLayout from "../Layouts/DashBoardLayout";
+import DashBoardHome from "../Pages/DashBoardHome";
 
 export const router = createBrowserRouter([
   {
@@ -28,14 +30,7 @@ export const router = createBrowserRouter([
           fetch("https://assignment-11-server-delta-nine.vercel.app/blogs"),
         Component: Home,
       },
-      {
-        path: "/addBlog",
-        element: (
-          <PrivateRoute>
-            <AddBlog></AddBlog>
-          </PrivateRoute>
-        ),
-      },
+
       {
         path: "/updateBlog/:id",
         hydrateFallbackElement: <Loader></Loader>,
@@ -78,14 +73,7 @@ export const router = createBrowserRouter([
 
         Component: FeaturedBlog,
       },
-      {
-        path: "/wishlist",
-        element: (
-          <PrivateRoute>
-            <Wishlist></Wishlist>
-          </PrivateRoute>
-        ),
-      },
+
       {
         path: "/signin",
         Component: SignIn,
@@ -97,6 +85,36 @@ export const router = createBrowserRouter([
       {
         path: "/signup",
         Component: SignUp,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashBoardLayout></DashBoardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        Component: DashBoardHome,
+      },
+      {
+        path: "wishlist",
+        element: (
+          <PrivateRoute>
+            <Wishlist></Wishlist>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "addBlog",
+        element: (
+          <PrivateRoute>
+            <AddBlog></AddBlog>
+          </PrivateRoute>
+        ),
       },
     ],
   },
