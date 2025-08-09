@@ -2,18 +2,42 @@ import React, { use } from "react";
 import myAnimation from "../assets/Contact Us.json";
 import Lottie from "lottie-react";
 import { AuthContext } from "../Context/AuthContext";
+import { toast, ToastContainer } from "react-toastify";
+import emailjs from "@emailjs/browser";
 
 const ContactUs = () => {
   const { theme } = use(AuthContext);
-
   const isDark = theme === "dark";
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_i6fmx4m", // your EmailJS service ID
+        "template_tp32ewx", // your EmailJS template ID
+        e.target,
+        "3n_qKai8LB3ySb_kn" // your EmailJS public key
+      )
+      .then(
+        () => {
+          toast.success("Successfully sent the message to the owner");
+          e.target.reset();
+        },
+        (error) => {
+          console.error(error);
+          toast.error("Failed to send message");
+        }
+      );
+  };
+
   return (
     <div
-      className={`py-36  ${
+      className={`py-36 ${
         isDark ? "bg-gray-900 text-white" : "bg-white text-gray-800"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6  grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left Content */}
         <div className="space-y-8">
           <h2
@@ -40,6 +64,7 @@ const ContactUs = () => {
 
         {/* Contact Form */}
         <form
+          onSubmit={handleSubmit}
           noValidate
           className={`space-y-6 p-8 rounded-lg shadow-md transition ${
             isDark ? "bg-gray-800 text-white" : "bg-white"
@@ -56,8 +81,10 @@ const ContactUs = () => {
             </label>
             <input
               id="name"
+              name="name"
               type="text"
               placeholder="Your name"
+              required
               className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 transition ${
                 isDark
                   ? "bg-gray-700 border-gray-600 text-white focus:ring-yellow-500"
@@ -77,8 +104,10 @@ const ContactUs = () => {
             </label>
             <input
               id="email"
+              name="email"
               type="email"
               placeholder="you@example.com"
+              required
               className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 transition ${
                 isDark
                   ? "bg-gray-700 border-gray-600 text-white focus:ring-yellow-500"
@@ -98,8 +127,10 @@ const ContactUs = () => {
             </label>
             <textarea
               id="message"
+              name="message"
               rows="4"
               placeholder="Write your message here..."
+              required
               className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 transition ${
                 isDark
                   ? "bg-gray-700 border-gray-600 text-white focus:ring-yellow-500"
@@ -120,6 +151,7 @@ const ContactUs = () => {
           </button>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
