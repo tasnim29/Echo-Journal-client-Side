@@ -65,7 +65,7 @@ const Wishlist = () => {
   }
 
   return (
-    <div className="py-36">
+    <div className="py-10">
       <div className="overflow-x-auto max-w-7xl mx-auto ">
         <h1
           className={`text-2xl md:text-5xl font-bold text-center mb-3 ${

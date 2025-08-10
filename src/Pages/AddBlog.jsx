@@ -31,14 +31,8 @@ const AddBlog = () => {
       });
   };
   return (
-    <div className="py-36">
-      <div
-        className={`max-w-7xl mx-auto p-10 rounded-xl shadow-lg transition-colors duration-700 ${
-          theme === "dark"
-            ? "bg-gray-900 border border-yellow-500"
-            : "bg-secondary border border-gray-200"
-        }`}
-      >
+    <div className="py-10">
+      <div className="max-w-7xl mx-auto p-10 rounded-xl shadow-sm transition-colors duration-700">
         <header className="mb-12 text-center">
           <h1
             className={`text-4xl font-bold mb-2 ${
